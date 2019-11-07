@@ -6,7 +6,7 @@ const NASAInfo = () => {
 
     useEffect(() => {
         axios
-        .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+        .get(`https://api.nasa.gov/planetary/apod?api_key=LaMzze60RNo3tcPnmY6x9J3j1owDp78ss6J2U3ts`)
         .then(res => {
             setInfo(res.data.explanation)
         })
