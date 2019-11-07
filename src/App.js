@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <h1>NASA Astronomy Photo of the Day</h1>
       <NASAPhoto />
     </div>
   );
