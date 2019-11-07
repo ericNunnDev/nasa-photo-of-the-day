@@ -14,11 +14,10 @@ function App() {
     axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=${key}`)
     .then(res => {
-        console.log(res.data)
         setDate(res.data.date)
     })
     .catch(e => {
-        console.log("You done messed up man", e);
+        console.log(e);
     });
   })
 

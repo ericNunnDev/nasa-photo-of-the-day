@@ -7,8 +7,9 @@ const [photo, setPhoto] = useState([]);
 
     useEffect(() => {
         axios
-        .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+        .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
         .then(res => {
+            console.log(res.data)
             setPhoto(res.data.hdurl)
         })
         .catch(e => {
