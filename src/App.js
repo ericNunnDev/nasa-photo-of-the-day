@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import dotenv from "dotenv";
 import axios from "axios";
 import NASAPhoto from "./components/NASAPhoto";
 import "./App.css";
 
+require("dotenv").config()
+
 function App() {
   const [date, setDate] = useState([]);
 
+  const key = process.env.API_KEY;
+
   useEffect(() => {
     axios
-    .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+    .get(`https://api.nasa.gov/planetary/apod?api_key=${key}`)
     .then(res => {
         console.log(res.data)
         setDate(res.data.date)
