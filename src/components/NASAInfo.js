@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
-import NASAInfo from "./NASAInfo";
 import axios from "axios";
 
-const NASAPhoto = () => {
-const [photo, setPhoto] = useState([]);
+const NASAInfo = () => {
+    const [info, setInfo] = useState([]);
 
     useEffect(() => {
         axios
         .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
         .then(res => {
-            setPhoto(res.data.hdurl)
+            setInfo(res.data.explanation)
         })
         .catch(e => {
-            console.log("NASAPhoto error", e);
+            console.log("NASAInfo Error", e);
         });
     }, []);
 
     return (
         <div>
-           <img className="APOD" src={photo} alt="NASA" />
-           <NASAInfo />
+            <p>{info}</p>
         </div>
     )
 }
 
-export default NASAPhoto;
+export default NASAInfo;
