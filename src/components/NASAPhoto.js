@@ -20,8 +20,8 @@ const [photo, setPhoto] = useState([]);
 
     return (
         <div>
-            <Card className="my-3">
-                <CardImg src={photo} alt="NASA" />
+            <Card className="p-2">
+                <CardImg max height="600" src={photo} alt="NASA" />
             </Card>
            <NASAInfo />
         </div>

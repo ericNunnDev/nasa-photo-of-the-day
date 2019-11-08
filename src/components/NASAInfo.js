@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import axios from "axios";
 
 const NASAInfo = () => {
@@ -11,15 +12,19 @@ const NASAInfo = () => {
             setInfo(res.data.explanation)
         })
         .catch(e => {
-            console.log("NASAInfo Error", e);
+            console.log(e);
         });
     }, []);
 
     return (
         <div>
-            <p>{info}</p>
+           <Info className="px-4">{info}</Info>
         </div>
     )
 }
+
+const Info = styled.p`
+font-family: 'Roboto', sans-serif;
+`
 
 export default NASAInfo;

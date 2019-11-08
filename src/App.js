@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 import NASAPhoto from "./components/NASAPhoto";
 import "./App.css";
 
@@ -18,12 +19,24 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>NASA Astronomy Photo of the Day</h1>
-      <p>{date}</p>
+      <AppWrapper className="App">
+      <Title>NASA Astronomy Photo of the Day</Title>
+      <Date>{date}</Date>
       <NASAPhoto />
-    </div>
+      </AppWrapper>
   );
 }
 
+const AppWrapper = styled.div`
+  background-color: #333;
+  color: #FFF;
+  height: 100vh;
+`
+const Title = styled.h1`
+  font-family: 'Big Shoulders Display', cursive;
+  padding-top: 10px;
+`
+const Date = styled.p`
+  font-weight: bold;
+`
 export default App;
